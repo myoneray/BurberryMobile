@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.my-width-max {
+ max-width: 500px;
+ border-color: red;
+}
+
+.my-boot {
+ padding-top: 70px;
+}
+
+.my-img {
+ width: 100%;
+ padding-right: 10px;
+}
