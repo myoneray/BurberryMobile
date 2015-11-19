@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>歡迎參加Burberry-銀聯智惠節日有禮活動！</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
+<link rel="stylesheet" href="css/myStyle.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.mobile-1.3.1.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+
+</head>
+<body>
+    <div data-role="paged" class="my-width-max">
+        <div data-role="header" data-position="fixed">
+            <a href="/index.html" data-role="button">返回</a>
+            <h1>歡迎參加Burberry-銀聯智惠節日有禮活動！</h1>
+        </div>
+        <div data-role="content">
+            <form method="post" id="checkMoneyForm">
+                <label for="checkMoneyMobile">請輸入手機號查看返現結果：</label>
+                <div data-role="fieldcontain">
+                    <input type="text" name="numb" id="numb" />  
+                </div>
+                <div class="errorForm"></div>
+                <input data-role="submit" type="submit" id="checkMoneyButtin" value="提交">
+            </form>
+            <div class="ui-grid-a my-boot">
+                <div class="ui-block-a">
+                    <img src="img/Burberry_Logo.png" class="my-img" />
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/Upsmart_Logo.png" class="my-img" />
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 10px;">本活動由Burberry Asia Ltd及銀聯智惠授權發起</p>
+        </div>
+        <!-- /content -->
+    </div>
+    <!-- /page -->
+    <script>
+                    $(function() {
+                        $('#checkMoneyButtin').click(function() {
+                            // 驗證
+                            if (!$('#checkMoneyForm').valid()) {
+                                console.info("驗證失敗!");
+                                return;
+                            } else {
+                                console.info("驗證SUCCESS!");
+                            }
+                        });
+                        //驗證
+                        $("#checkMoneyForm").validate({
+                            rules : {
+                                numb : {
+                                    required : true
+                                }
+                            },
+                            messages : {
+                                numb : {
+                                    required : "手機號必須填寫"
+                                }
+                            },
+                            errorLabelContainer : $(".errorForm")
+                        });
+
+                    });
+                </script>
+</body>
+</html>
